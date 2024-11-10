@@ -24,9 +24,6 @@ const GridGame = () => {
     } = useGameState();
     const [showModal, setShowModal] = React.useState(false);
 
-    //clear localStorage
-    // localStorage.clear();
-
     useEnemyMovement(enemies, setEnemies, gameOver);
 
     usePlayerMovement(gameOver, setPosition);
@@ -38,7 +35,7 @@ const GridGame = () => {
 
     // Add this new handler
     const handleSaveRecord = (record) => {
-        console.log('New record saved:', record);
+
         resetGame();
     };
     const nextLevel = React.useCallback(() => {

@@ -21,10 +21,13 @@ function GameOverModal(props) {
             const newRecord = saveRecord(playerName, level);
             onSave(newRecord);
             setPlayerName('');
+
+            if (window.refreshGameRecords) {
+                window.refreshGameRecords();
+            }
             onClose();
         } catch (error) {
             console.error('Error in handleSave:', error);
-            // You might want to show an error message to the user here
         }
     };
 
